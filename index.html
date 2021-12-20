@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <script src="./src/app.js" defer></script>
+</head>
+<body>
+    <div id="app">
+        <div class="heading" role="heading">
+            <h1>currency converter (GBP to AUD)</h1>
+        </div>
+        <form class="exchange-board">
+            <div class="field">
+                <select name="currency" id="currency" disabled>
+                    <option value="gbp" selected>GBP</option>
+                </select>
+                <label for="currency">Selected Currency</label>
+            </div>
+
+            <div class="field">
+                <input type="number" placeholder="Enter amount to be converted" min="0" name="gbp" id="gbp">
+                <label for="gbp">Enter amount in GBP</label>
+            </div>
+
+            <div class="field">
+                <input type="text" name="amount" id="amount">
+                <label for="amount">Converted Amount in AUD</label>
+            </div>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+</body>
+</html>
