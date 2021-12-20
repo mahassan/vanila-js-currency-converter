@@ -22,7 +22,9 @@
             </div>
 
             <div class="field">
-                <input type="number" placeholder="Enter amount to be converted" min="0" name="gbp" id="gbp">
+                <input type="text" 
+                        onkeyup="callAPI()"
+                        placeholder="Enter amount to be converted" min="0" name="gbp" id="gbp">
                 <label for="gbp">Enter amount in GBP</label>
             </div>
 
@@ -30,7 +32,7 @@
                 <input type="text" name="amount" id="amount">
                 <label for="amount">Converted Amount in AUD</label>
             </div>
-            <input type="submit" value="submit">
+            <input type="submit" value="Convert">
         </form>
     </div>
 </body>

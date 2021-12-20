@@ -1,31 +1,28 @@
 
 
-const app = document.getElementById("app");
+const app = document.querySelector("#app");
 const form = document.querySelector(".exchange-board");
-const currencyInput = document.getElementById("gbp");
-const amount = document.getElementById("amount")
+const currencyInput = document.querySelector("#gbp");
+const amount = document.querySelector("#amount")
 const submit = document.querySelector('.submit')
 
 let AUD;
 let GBP;
-function callApi(){
-    if(gbp.value !== ''){
-        app.classList.add("loading")
-        fetch("https://api.exchangerate-api.com/v4/latest/GBP")
-         .then((res)=>{
-             return res.json()
-         })
-         .then(({rates})=>{
-            AUD = rates.AUD
-            app.classList.remove("loading")
-            amount.value = currencyInput.value * AUD;
-         })
-    }
-    
+function callAPI(){
+    fetch("https://api.exchangerate-api.com/v4/latest/GBP")
+     .then((res)=>{
+         return res.json()
+     })
+     .then(({rates})=>{
+        AUD = rates.AUD
+        amount.value = currencyInput.value * AUD;
+     })
+     .catch(err => {
+         amount.appendChild("div").innerText("Error occurred" ,err)
+     })
 }
 form.addEventListener("submit", function(e){
     e.preventDefault();
-    callApi()
 })
 
 
